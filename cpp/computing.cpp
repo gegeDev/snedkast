@@ -19,7 +19,7 @@ int main()
     {
         float xPlace = params.velocityX * i;
         float yPlace = params.velocityY * i - (params.g * i * i / 2);
-        cout << i << " " << xPlace << yPlace << endl; 
+        cout << i << " " << xPlace << " " << yPlace << endl; 
     }
     return 0;
 }
