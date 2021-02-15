@@ -14,7 +14,6 @@ int main()
     Settings params;
     cin >> params.g >> params.hd >> params.step >> params.velocityY >> params.velocityX;
     float time = 2.0 * params.velocityY / params.g;
-    cout << time << endl;
     float timeDef = time / params.step;
     for(float i = 0; i <= time; i+= timeDef)
     {
