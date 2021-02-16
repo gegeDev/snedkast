@@ -25,11 +25,20 @@ utils.execute(name, 'settings')
 f = open('results/{}/{}.txt'.format(name, name))
 x = []
 y = []
+v = []
+t = []
 for line in f:
     temp = [float(i) for i in line.split()]
+    t.append(temp[0])
     x.append(temp[1])
     y.append(temp[2])
+    v.append(temp[3])
 f.close()
 
-pyplot.plot(x, y)
-pyplot.savefig('results/{}/{}.pdf'.format(name, name))
+fig, axs = pyplot.subplots(2)
+fig.tight_layout()
+axs[0].plot(x, y)
+axs[0].set_title('Position chart')
+axs[1].plot(t, v)
+axs[1].set_title('Velocity over time')
+fig.savefig('results/{}/{}.pdf'.format(name, name))
